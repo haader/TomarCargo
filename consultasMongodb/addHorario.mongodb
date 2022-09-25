@@ -1,0 +1,5 @@
+use('abx');
+
+//db.horarios.insertOne();
+
+db.horarios.find();

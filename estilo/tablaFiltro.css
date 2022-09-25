@@ -1,0 +1,18 @@
+
+/* si modificamos el color debemos modificar tablaFiltro.js AplicarFiltro() linea 50 */
+.color1{
+    background: rgb(22, 88, 22);
+}
+.color2{
+    background: rgb(109, 231, 109);
+}
+
+.red{
+    color: red;
+}
+.orange{
+    color:orange
+}
+.blacking{
+    color: black;
+}

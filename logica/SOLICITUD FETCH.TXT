@@ -1,0 +1,46 @@
+//ENCABEZA DE RESPUESTA
+
+Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
+Access-Control-Allow-Methods: GET, POST
+Access-Control-Allow-Origin: *
+Connection: Keep-Alive
+Content-Encoding: gzip
+Content-Type: application/json
+Date: Sat, 27 Aug 2022 08:24:27 GMT
+Keep-Alive: timeout=300, max=97
+Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips mod_fcgid/2.3.9 PHP/5.4.45
+Transfer-Encoding: chunked
+Vary: Accept-Encoding
+Via: 1.1 servicios3.abc.gob.ar (Access Gateway-ag-94C875E6AFE98AF3-818841324)
+X-Powered-By: PHP/5.4.45
+
+//ENCABEZA DE SOLICITUD
+=>diferente
+    Accept: */*
+    Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+
+=>iguales
+
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es-ES,es;q=0.9
+Connection: keep-alive
+
+Cookie: _ga=GA1.3.788245729.1660259178; _gid=GA1.3.1784572262.1661188737; ZNPCQ003-38383700=75d9a600; ZNPCQ003-33383400=d5e120e6; ZNPCQ003-32383300=b9815c12
+Host: servicios3.abc.gob.ar
+Referer: https://servicios3.abc.gob.ar/valoracion.docente/api/apd.oferta.encabezado/select?rows=0&facet=true&facet.limit=-1&facet.mincount=1&json.nl=map&facet.field=descdistrito&q=*:*&wt=json
+sec-ch-ua: ".Not/A)Brand";v="99", "Google Chrome";v="103", "Chromium";v="103"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+
+rows: 0
+json.nl: map
+json.wrf: hola
+q: *:*
+facet: true
+facet.field: descdistrito
+facet.limit: -1
+facet.mincount: 1
+wt: json

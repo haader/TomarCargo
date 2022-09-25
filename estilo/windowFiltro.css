@@ -1,0 +1,70 @@
+.windowFiltro
+{
+    width: 15rem;
+    height: 15rem;
+position: fixed;
+top: 0;
+background: white;
+border-radius: 10px;
+border: 1px solid black;
+display: flex;
+flex-direction: column;
+padding: 1rem;
+align-items: center;
+justify-content: center;
+z-index: 10;
+}
+.windowFiltro
+.divFiltro
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.windowFiltro
+.exite
+{
+    position: absolute;
+    right: 0.25rem;
+    top:  0.25rem;
+}
+
+.windowFiltro
+.btnF
+{
+    margin-top: 3rem;
+}
+
+.black
+{
+    display: flex;
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0,0.5);
+}
+
+
+.inputFiltro{
+
+}
+.listaEmergente
+{
+    background: white;
+    position:fixed;
+    top: 7.6rem;
+    display: flex;
+    flex-direction: column;
+
+}
+            .optionEmergente{
+                border: 1px solid black;
+            }
+            .optionEmergente:hover{
+                background: rgba(175, 169, 169, 0.658);
+                border: 2px solid rgb(43, 43, 43);
+                box-sizing: border-box;
+            }

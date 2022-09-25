@@ -1,0 +1,55 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form h3{
+    text-align: center;
+}
+.columna{
+    display: flex;
+    flex-direction: column;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+/*TABLA*/
+table
+thead
+tr{
+    background: green;
+    border: 1px solid black;
+}
+
+
+
+/*lista de dias que tiene modulo*/
+
+.rowMañana{
+    background: orange;
+    text-align: center;
+}
+.rowTarde
+{
+    background: orangered;
+    text-align: center;
+}
+.rowNoche{
+    background: orange;
+    text-align: center;
+}
+
+
+.tabla{
+    display: flex;
+    flex-direction: row;
+}

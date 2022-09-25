@@ -1,0 +1,54 @@
+//si enviamos un row=0 solo para cargar los "numfund"???
+// crear un boton para ver los detalles solo por ige  (es necesario???)
+// a un costado del ige (crear un btn ver "todos los detalles")
+// colocar un boton que indique los detalles (lista de postulados)
+
+""distritos""
+
+        almirante brown
+        lomas de zamora
+        presidente peron 
+        florencio varela
+        esteban echeverria
+
+        san vicente
+        quilmes
+
+""niveles""
+
+        SECUNDARIA
+        Adultos
+        ADULTOS Y CENS
+        SECUNDARIA ADULTOS
+        TECNICO PROFESIONAL
+
+""cargos""
+
+        "AREA QUIMICA CENS - ADULTOS (+5Y)",
+        "AREA FISICA CENS - ADULTOS (+5X) (fijarse en el nomenclador)",
+        "FINES QUIMICA (WQQ)",
+
+        "ciencias naturales cnt",
+        "fisico - quimica fqa",
+        "INTRODUCCIÓN A LA QUÍMICA (IAQ)",
+        "FUNDAMENTOS DE LA QUÍMICA (FDQ)",
+        "QUÍMICA ORGÁNICA (QO)",
+        "LABORATORIO DE QUÍMICA (LQI)",
+
+        "Coordinador Institucional (COI)",
+        "PRECEPTOR (/PR)",
+        "BIBLIOTECARIO (/BI)",
+
+
+        "buscar"
+        COI:
+
+        1191756
+        1191903
+        1192476
+
+    "guernica:"
+        1190178
+        1190429
+
+https://mapaescolar.abc.gob.ar/mapaescolar/

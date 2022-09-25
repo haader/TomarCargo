@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TomarCargo</title>
+    <link rel="stylesheet" href="./estilo/general.css">
+    <link rel="stylesheet" href="./estilo/filtros.css">
+    <link rel="stylesheet" href="./estilo/windowFiltro.css">
+    <link rel="stylesheet" href="./estilo/tablaFiltro.css">
+    <link rel="stylesheet" href="./estilo/Tarjetascargos.css">
+
+
+</head>
+<body id="cuerpo">
+    <nav>
+        <h3>TomarCargo.com</h3>
+    </nav>
+    <div class="form" >
+        <h3>Mis Horarios</h3>
+        <div class="columna">
+            <div class="row"><text>día:</text><select name="nameDía" id="Dia"></select></div>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Mañana</td>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr id="checkM">
+                            
+                            
+                        </tr>
+                </tbody>
+
+                <thead>
+                    <tr>
+                        <td>Tarde</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="checkT">
+                            
+                    </tr>
+                </tbody>
+
+                <thead>
+                    <tr>
+                        <td>Noche</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="checkN">
+                            
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="row">
+            <button onclick="btnAgregar()">Agregar</button>
+            <button>Eliminar</button>
+            <button onclick="btnLimpiar()">Limpiar</button>
+        </div>
+        
+    </div>
+    
+    <section>
+                <h3>Mis horarios</h3>
+            
+            <div class="tabla">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Hora</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1ra</td>
+                        </tr>
+                        <tr>
+                            <td>2ra</td>
+                        </tr>
+                        <tr>
+                            <td>3ra</td>
+                        </tr>
+                        <tr>
+                            <td>4ra</td>
+                        </tr>
+            
+                        <tr>
+                            <td>1ra</td>
+                        </tr>
+                        <tr>
+                            <td>2ra</td>
+                        </tr>
+                        <tr>
+                            <td>3ra</td>
+                        </tr>
+                        <tr>
+                            <td>4ra</td>
+                        </tr>
+            
+                        <tr>
+                            <td>1ra</td>
+                        </tr>
+                        <tr>
+                            <td>2ra</td>
+                        </tr>
+                        <tr>
+                            <td>3ra</td>
+                        </tr>
+                        <tr>
+                            <td>4ra</td>
+                        </tr>
+            
+                    </tbody>
+                </table>
+                <table>
+                
+                    <thead>
+                        <tr>
+                            <td>LUNES</td>
+                            <td>MARTES</td>
+                            <td>MIERCOLES</td>
+                            <td>JUEVES</td>
+                            <td>VIERNES</td>
+                            <td>SABADO</td>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoCalendario">
+            
+                        
+            
+                    </tbody>
+                </table>
+            </div>
+    </section>
+
+    <br>
+    <h2>Aplicar Filtros </h2>
+    <br>
+
+    <div class="filtrarContenedor">
+        
+        <div class="filtrarContenedorRow">
+
+                <div class="filtro">
+                    <span class="circulo"><ion-icon name="map-outline"></ion-icon></span>
+                    <text>Distrito</text>
+                    <button class="btn" onclick="filtroDistrito()">Filtrar</button>
+
+                    <div class="selectFiltro" id="selectFiltro0">
+
+                    </div>
+                </div>
+                <div class="filtro">
+                    <span class="circulo"><ion-icon name="logo-buffer"></ion-icon></span>
+                    
+                    <text>Niveles o Modalidades</text>
+                    <button class="btn" onclick="filtroNivel()">Filtrar</button>
+
+                    <div class="selectFiltro" id="selectFiltro1">
+
+                    </div>
+                </div>
+                <div class="filtro">
+                    <span class="circulo"><ion-icon name="school-outline"></ion-icon></span>
+                    <text>Cargo</text>
+                    <button class="btn" >....</button>
+
+                    <div class="selectFiltro" id="selectFiltro2">
+
+                    </div>
+                </div>
+            </div>
+            <button id="btnAplicarFiltros" onclick="funcionBtnAplicarFiltros()" disabled="true">Aplicar Filtros</button>
+
+    </div>
+        <br>
+
+
+    <div class="filtroDistrito" id="filtroDistrito">
+        
+    </div>
+
+    <div class="filtroDistrito" id="filtroNiveles">
+        
+    </div>
+  
+
+    <div class="tablaFiltro">
+        <table>
+            <thead>
+                <tr>
+                    <td>Distrito</td>
+                    <td>Nivel</td>
+                    <td>Cargo</td>
+                    <td>Eliminar</td>
+                    <td>Editar</td>
+                    <td>Ver</td>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTablaFiltro" class="cuerpoTablaFiltro">
+            
+            
+            
+            </tbody>
+            </table>
+            
+        <!-- <table>
+            <thead>
+                <tr>
+                    <td>Distrito</td>
+                    <td>Nivel</td>
+                    <td>Cargo</td>
+                    <td>Eliminar</td>
+                    <td>Editar</td>
+                    <td>Ver</td>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTablaFiltro" class="cuerpoTablaFiltro">
+
+            </tbody>
+        </table> -->
+    </div>
+    <br>
+    <h2>Tarjetas</h2>
+    <br>
+    <div id="ofertas" class="ofertas">
+
+    
+
+    </div>
+
+    <script src="./logica/peticionesABC.js"></script>
+    <script src="./logica/json.js"></script>
+    <script src="./logica/general.js"></script>
+    <script src="./logica/filtro.js"></script>
+    <script src="./logica/tablaFiltro.js"></script>
+    <script src="./logica/listaCargos.js"></script>
+
+    <script src="./logicaMongoDB/addMongo.js"></script>
+    <script src="./logicaMongoDB/deleteMongo.js"></script>
+    <script src="./logicaMongoDB/readMongo.js"></script>
+    <script src="./logicaMongoDB/updateMongo.js"></script>
+    
+
+    <script src="./logica/PRUEBA.js"></script>
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+</body>
+</html>
+
+<!--
+
+    tomarcargo
+    usuario1234
+
+    name solosolo api key: x1Ye4wEFPWxMuLzv1SfM799AvTI56lhl3GIEwonantYlYtMuRiFp0yRoMOZPMaNs
+-->
+
+
+<!--
+
+https://data.mongodb-api.com/app/data-fwjec/endpoint/data/v1/action/findOne
+  -H 'api-key: x1Ye4wEFPWxMuLzv1SfM799AvTI56lhl3GIEwonantYlYtMuRiFp0yRoMOZPMaNs'
+  -H 'Content-Type: application/json'
+  -H 'Accept: application/json'
+  --data-raw '{
+     "dataSource": "mongodb-atlas",
+     "database": "learn-data-api",
+     "collection": "filtro",
+     "projection": { "distrito": "almirante brown", "nivel": "adultos", "cargo": "wqq" }
+  }'
+
+
+-->
