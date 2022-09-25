@@ -13,7 +13,10 @@
 
 //console.log("El numero devuelto es: "+ObtenerNumFound(selectDistrito,selectNivel,selectCargo));
 
-cargarFiltros();//
+cargarFiltros();//que hace??
+
+PeticionABC(tratamientoParametros("lomas de zamora","secundaria","ciencias naturales (cnt)"));
+
 
 //listaCargos("adultos y cens");//PETICION AL ABC, pushea la lista a objetoCargos
 

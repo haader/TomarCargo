@@ -85,12 +85,18 @@ function renderizarOfertas(texto){
             <span><ion-icon name="menu-outline"></ion-icon></span>
         </div>
         <div class="cargo">
+            
+            <span class="detalleNegro">${ofer[i].escuela} <button><ion-icon name="navigate-circle-outline"></ion-icon>Ver Escuela</button></span>    
             <h4>${ofer[i].cargo}</h4>
+            
         </div>
         <div class="data">
-            <span>IGE:${ofer[i].ige}</span>
-            <span>(${ofer[i].areaincumbencia})</span>
-            <span>${ofer[i].descnivelmodalidad}</span>
+
+            <div><span class="detalleGris">IGE:</span><span class="detalleNro">${ofer[i].ige}</span><div>
+            <div><span class="detalleGris">AREA:</span><span class="detalleNro">(${ofer[i].areaincumbencia})</span><div>
+            <div><span class="detalleGris">NIVEL O MODALIDAD:</span><span class="detalleNro">${ofer[i].descnivelmodalidad}</span><div>
+            
+            
         </div>
         <div class="tarjetaBody">
     
