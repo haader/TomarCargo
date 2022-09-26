@@ -51,10 +51,6 @@ function listaCargos(modalidad){//trae la lista de cargos de la modalidad selecc
             let json=JSON.parse(txt)
             console.log(json);
 
-            for (var key in json.facet_counts.facet_fields.cargo) {
-                console.log(key)
-
-            }
             let myarray=json.facet_counts.facet_fields.cargo;
             let modalidad2=modalidad.replaceAll(" ","_");
             for (var key in myarray) {

@@ -81,50 +81,65 @@ function renderizarOfertas(texto){
     
         <div class="tarjeta">
         <div class="estado">
-            <h4>Publicada</h4>
-            <span><ion-icon name="menu-outline"></ion-icon></span>
+            <p>PUBLICADA</p>
+            <span class="btn" onclick="VerDetalleCargo(${ofer[i].ige})"><ion-icon name="list-outline"></ion-icon></span>
         </div>
         <div class="cargo">
             
-            <span class="detalleNegro">${ofer[i].escuela} <button><ion-icon name="navigate-circle-outline"></ion-icon>Ver Escuela</button></span>    
-            <h4>${ofer[i].cargo}</h4>
+            <span class="detalleNegro">${ofer[i].escuela} <button class="btnAccionar"><ion-icon name="navigate-circle-outline"></ion-icon>Ver Escuela</button></span>    
+            <p>${ofer[i].cargo}</p>
             
         </div>
         <div class="data">
 
-            <div><span class="detalleGris">IGE:</span><span class="detalleNro">${ofer[i].ige}</span><div>
-            <div><span class="detalleGris">AREA:</span><span class="detalleNro">(${ofer[i].areaincumbencia})</span><div>
-            <div><span class="detalleGris">NIVEL O MODALIDAD:</span><span class="detalleNro">${ofer[i].descnivelmodalidad}</span><div>
+            <div class="column"><span class="detalleGris">IGE:</span><div class="row">  <span class="detalleNro">${ofer[i].ige}</span>    <button class="btnAccionar" onclick="copiar(${ofer[i].ige})"><ion-icon name="copy-outline"></ion-icon> Copiar</button></div></div>
+            <div class="column"><span class="detalleGris">AREA:</span><span class="detalleNro">(${ofer[i].areaincumbencia})</span></div>
+            <div class="column"><span class="detalleGris">NIVEL O MODALIDAD:</span><span class="detalleNro">${ofer[i].descnivelmodalidad}</span></div>
             
             
         </div>
+
+
         <div class="tarjetaBody">
     
-        <ul>
-            <li><span class="txt">Domicilio: ${ofer[i].domiciliodesempeno}</span></li>
-            <li><span class="txt">Curso/División: ${ofer[i].cursodivision} </span></li>
-            <li><span class="txt">Turno: ${ofer[i].turno}</span></li>
-            <br>
-            <li><span class="txt">"horario": </span></li>
-            <li><span class="txt" id="d1${i}"></span></li>
-            <li><span class="txt" id="d2${i}"></span></li>
-            <br>
-            <li><span class="txt">Jornada: ${ofer[i].jornada}</span></li>
-            <li><span class="txt">Revista: ${ofer[i].supl_revista}</span></li>
-            <li><span class="txt">Toma de Posesión: ${transformarFechas(ofer[i].tomaposesion)}</span></li>
-            <br>
-            <li><span class="txt">Inicio de Oferta: ${transformarFechas(ofer[i].iniciooferta)}</span></li>
-            <li><span class="txt">Fin de Oferta: ${transformarFechaWithHora(ofer[i].finoferta)}</span></li>
-            <li><span class="txt">Desde: ${transformarFechas(ofer[i].supl_desde)}</span></li>
-            <li><span class="txt">Hasta: ${transformarFechas(ofer[i].supl_hasta)}</span></li>
-            <br>
-            <li><span class="txt">Observaciones: ${ofer[i].observaciones}</span></li>
+        
+        <div class="ordenCuerpo"><p><ion-icon name="home-outline"></ion-icon><b> Domicilio: </b> ${ofer[i].domiciliodesempeno}</p> <button class="btnAccionar" onclick='copiar("${ofer[i].domiciliodesempeno}")'><ion-icon name="copy-outline"></ion-icon> Copiar</button>  <button class="btnAccionar"><ion-icon name="navigate-circle-outline"></ion-icon>Ir Mapa</button></div>
+        
+        <div class="ordenCuerpo"><p><ion-icon name="briefcase-outline"></ion-icon><b> Curso/División: </b>${ofer[i].cursodivision} AÑOS</p></div>
+        <div class="ordenCuerpo"><p><ion-icon name="briefcase-outline"></ion-icon><b> Turno: </b>${ofer[i].turno}</p></div>
+        <div class="ordenCuerpo"><p><ion-icon name="briefcase-outline"></ion-icon><b> Jornada: </b>${ofer[i].jornada}</p></div>
+        <div class="ordenCuerpo"><p><ion-icon name="briefcase-outline"></ion-icon><b> Revista: </b>${ofer[i].supl_revista}</p></div>
     
-        </ul>
+        <div class="ordenCuerpo"><p><ion-icon name="time-outline"></ion-icon><b> Toma de Posesión: </b>${transformarFechas(ofer[i].tomaposesion)}</p></div>
+
+        <div class="ordenCuerpo"><p><ion-icon name="calendar-number-outline"></ion-icon><b> Inicio Oferta: </b>${transformarFechas(ofer[i].iniciooferta)}</p></div>
+        <div class="ordenCuerpo"><p><ion-icon name="calendar-number-outline"></ion-icon><b> Fin Oferta: </b>${transformarFechas(ofer[i].finoferta)}</p></div>
+
+        <div class="ordenCuerpo"><p><ion-icon name="calendar-outline"></ion-icon><b> Desde: </b>${transformarFechas(ofer[i].supl_desde)}</p></div>
+        <div class="ordenCuerpo"><p><ion-icon name="calendar-outline"></ion-icon><b> Hasta: </b>${transformarFechas(ofer[i].supl_hasta)}</p></div>
+
+      
+
+        <div class="ordenCuerpo"><p><ion-icon name="search-outline"></ion-icon><b> Observaciones: </b> ${ofer[i].observaciones} </p></div></div>
+
     
         </div>
     
     </div>`;
+            /* <li><span class="txt">"horario": </span></li>
+            <li><span class="txt" id="d1${i}"></span></li>
+            <li><span class="txt" id="d2${i}"></span></li>
+            
+            
+              <div class="ordenCuerpo"><p><i class="fas fa-clock"></i><b> Lunes: </b>8:00 A 12:00</p></div>
+        <div class="ordenCuerpo"><p><i class="fas fa-clock"></i><b> Martes: </b>8:00 A 12:00</p></div>
+        <div class="ordenCuerpo"><p><i class="fas fa-clock"></i><b> Miercoles: </b>8:00 A 12:00</p></div>
+        <div class="ordenCuerpo"><p><i class="fas fa-clock"></i><b> Jueves: </b>8:00 A 12:00</p></div>
+        <div class="ordenCuerpo"><p><i class="fas fa-clock"></i><b> Viernes: </b>8:00 A 12:00</p></div>
+            
+            */
+
+
     if(ofer[i].lunes!=""){
         document.getElementById("d2"+i).innerHTML=`
             lunes: ${ofer[i].lunes}
@@ -217,9 +232,21 @@ function renderizarOfertas(texto){
    
     //tomamos el id donde colocaremos las ofertas
 
-
    
 }
+
+//funcion para ver el detalle de las postulaciones
+function VerDetalleCargo(ige){
+    alert("el IGE del cargo es "+ige)
+}
+
+//funcion para ver copiar el ige, el domicilio ect
+function copiar(elemento){
+    alert("elemento copiado: "+elemento+"   (Hacer!)")
+}
+
+
+
 
 //let myfecha="2022-09-05T00:00:00Z";
 
