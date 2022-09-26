@@ -196,9 +196,7 @@ function auxiliarRenderizarTable(dis,niv,elementCargo){
     <tr class="${color}" id="idRowTabla${idRowTabla}">
         <td >${dis}</td>
         <td>${NivelSelect}</td>
-        <td>${elementCargo}</td>
-        <td><button class="red"><ion-icon name="close-circle-outline"></ion-icon></button></td>
-        <td><button class="orange"><ion-icon name="create-outline"></ion-icon></button></td>
+        <td class="tdCargo">${elementCargo}</td>
         <td><button class="blacking" onclick="TraerTarjetasABC('${dis}','${niv}','${elementCargo}','${idRowTabla}')"><ion-icon name="eye-outline"></ion-icon>  <span id="span${idRowTabla}" ${ObtenerNumFound(dis,niv,elementCargo,idRowTabla)}></span></button></td>
     </tr>
     
@@ -229,14 +227,14 @@ function TraerTarjetasABC(seleccion0,seleccion1,seleccion2,idROW){
     //limpiamos el div "ofertas"
     document.getElementById("ofertas").innerHTML="";
 
-    document.getElementById("idRowTabla"+idROW).style.backgroundColor="red";
+    document.getElementById("idRowTabla"+idROW).style.backgroundColor="rgb(129 211 119)";
 
     let nameClass=document.getElementById("idRowTabla"+idRowTablaActual).className;
     
     if(nameClass=="color1"){
-        document.getElementById("idRowTabla"+idRowTablaActual).style.backgroundColor= "rgb(22, 88, 22)";
+        document.getElementById("idRowTabla"+idRowTablaActual).style.backgroundColor= "rgb(213, 240, 213)";
     }else{
-        document.getElementById("idRowTabla"+idRowTablaActual).style.backgroundColor= "rgb(109, 231, 109)";
+        document.getElementById("idRowTabla"+idRowTablaActual).style.backgroundColor= "rgb(177 199 177)";
     }
     
     

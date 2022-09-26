@@ -26,13 +26,6 @@ body{
     flex-direction: row;
 }
 
-/*TABLA*/
-table
-thead
-tr{
-    background: green;
-    border: 1px solid black;
-}
 
 
 
