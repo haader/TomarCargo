@@ -41,7 +41,7 @@ client.onreadystatechange= ()=>{
   
  
   let txtReplace=txt.replace(/[()]/g,'');
-  console.log(txtReplace)    
+  //console.log(txtReplace)    
   txtJSON=txtReplace;
 
   
@@ -86,13 +86,13 @@ function renderizarOfertas(texto){
         </div>
         <div class="cargo">
             
-            <span class="detalleNegro">${ofer[i].escuela} <button class="btnAccionar"><ion-icon name="navigate-circle-outline"></ion-icon>Ver Escuela</button></span>    
+            <span class="detalleNegro">${ofer[i].escuela} <a href="https://mapaescolar.abc.gob.ar/mapaescolar/" target="_blank"><button class="btnAccionar"><ion-icon name="navigate-circle-outline"></ion-icon>Ver Escuela</button></a></span>    
             <p>${ofer[i].cargo}</p>
             
         </div>
         <div class="data">
 
-            <div class="column"><span class="detalleGris">IGE:</span><div class="row">  <span class="detalleNro">${ofer[i].ige}</span>    <button class="btnAccionar" onclick="copiar(${ofer[i].ige})"><ion-icon name="copy-outline"></ion-icon> Copiar</button></div></div>
+            <div class="column"><span class="detalleGris">IGE:</span><div class="row">  <span class="detalleNro" id="ige${i}">${ofer[i].ige}</span>    <button class="btnAccionar" onclick='copiar("ige${i}")'><ion-icon name="copy-outline"></ion-icon> Copiar</button></div></div>
             <div class="column"><span class="detalleGris">AREA:</span><span class="detalleNro">(${ofer[i].areaincumbencia})</span></div>
             <div class="column"><span class="detalleGris">NIVEL O MODALIDAD:</span><span class="detalleNro">${ofer[i].descnivelmodalidad}</span></div>
             
@@ -103,7 +103,7 @@ function renderizarOfertas(texto){
         <div class="tarjetaBody">
     
         
-        <div class="ordenCuerpo"><p><ion-icon name="home-outline"></ion-icon><b> Domicilio: </b> ${ofer[i].domiciliodesempeno}</p> <button class="btnAccionar" onclick='copiar("${ofer[i].domiciliodesempeno}")'><ion-icon name="copy-outline"></ion-icon> Copiar</button>  <button class="btnAccionar"><ion-icon name="navigate-circle-outline"></ion-icon>Ir Mapa</button></div>
+        <div class="ordenCuerpo"><p><ion-icon name="home-outline"></ion-icon><b> Domicilio: </b> <span id="domicilio${i}">${ofer[i].domiciliodesempeno}</span></p> <button class="btnAccionar" onclick='copiar("domicilio${i}")'><ion-icon name="copy-outline"></ion-icon> Copiar</button>  <button class="btnAccionar"><ion-icon name="navigate-circle-outline"></ion-icon>Ir Mapa</button></div>
         
         <div class="ordenCuerpo"><p><ion-icon name="briefcase-outline"></ion-icon><b> Curso/División: </b>${ofer[i].cursodivision} AÑOS</p></div>
         <div class="ordenCuerpo"><p><ion-icon name="briefcase-outline"></ion-icon><b> Turno: </b>${ofer[i].turno}</p></div>
@@ -121,99 +121,80 @@ function renderizarOfertas(texto){
       
 
         <div class="ordenCuerpo"><p><ion-icon name="search-outline"></ion-icon><b> Observaciones: </b> ${ofer[i].observaciones} </p></div></div>
+        <br>
 
-    
+        <div class="ordenCuerpo"><p><ion-icon name="calendar-outline"></ion-icon><b> Horarios: </b></p></div>
+        <div class="divHorarios" id="d2${i}"></div>
+
+        <br>
+
+        <div class="estado" id="postulados${i}">
+            <table>
+                <thead>
+                    <tr>
+                        <td>Nombre</td>
+                        <td>Listado de Origen</td>
+                        <td>Puntaje</td>
+                        <td>Prioridad</td>
+                    </tr>
+                </thead>
+                <tbody id="bodyTablaPostulados${i}">
+
+                </tbody>
+            </table>           
+        </div>
+        
         </div>
     
     </div>`;
-            /* <li><span class="txt">"horario": </span></li>
-            <li><span class="txt" id="d1${i}"></span></li>
-            <li><span class="txt" id="d2${i}"></span></li>
-            
-            
-              <div class="ordenCuerpo"><p><i class="fas fa-clock"></i><b> Lunes: </b>8:00 A 12:00</p></div>
-        <div class="ordenCuerpo"><p><i class="fas fa-clock"></i><b> Martes: </b>8:00 A 12:00</p></div>
-        <div class="ordenCuerpo"><p><i class="fas fa-clock"></i><b> Miercoles: </b>8:00 A 12:00</p></div>
-        <div class="ordenCuerpo"><p><i class="fas fa-clock"></i><b> Jueves: </b>8:00 A 12:00</p></div>
-        <div class="ordenCuerpo"><p><i class="fas fa-clock"></i><b> Viernes: </b>8:00 A 12:00</p></div>
-            
-            */
+    
+    
 
-
+// si el valor del horario NO esta vacio se renderiza en la tarjeta
     if(ofer[i].lunes!=""){
-        document.getElementById("d2"+i).innerHTML=`
-            lunes: ${ofer[i].lunes}
+        document.getElementById("d2"+i).innerHTML+=`
+        <div class="ordenCuerpo" id="d1${i}"><p><ion-icon name="time-outline"></ion-icon><b> Lunes: ${ofer[i].lunes}</p> </div>
+            
         `;
-        numDay++;
-    }
-    if(ofer[i].martes!=""){
-        document.getElementById("d2"+i).innerHTML=`
-            martes: ${ofer[i].martes}
-        `;
-        numDay++;
-    }
-    if(ofer[i].miercoles!=""){
-        document.getElementById("d2"+i).innerHTML=`
-            miercoles: ${ofer[i].miercoles}
-        `;
-        numDay++;
-    }
-    if(ofer[i].jueves!=""){
-        document.getElementById("d2"+i).innerHTML=`
-            jueves: ${ofer[i].jueves}
-        `;
-        numDay++;
-    }
-    if(ofer[i].viernes!=""){
-        document.getElementById("d2"+i).innerHTML=`
-            viernes: ${ofer[i].viernes}
-        `;
-        numDay++;
-    }
-    if(ofer[i].sabado!=""){
-        document.getElementById("d2"+i).innerHTML=`
-            sabado: ${ofer[i].sabado}
-        `;
-        numDay++;
-    }
-
-    //***************************--------====-------********************************
-    if(numDay>1){
-
-
-
-        if(ofer[i].sabado!=""){
-            document.getElementById("d1"+i).innerHTML=`
-                sabado: ${ofer[i].sabado}
-            `;
-        }
-        if(ofer[i].viernes!=""){
-            document.getElementById("d1"+i).innerHTML=`
-                viernes: ${ofer[i].viernes}
-            `;
-        }
-        if(ofer[i].jueves!=""){
-            document.getElementById("d1"+i).innerHTML=`
-                jueves: ${ofer[i].jueves}
-            `;
-        }
-        if(ofer[i].miercoles!=""){
-            document.getElementById("d1"+i).innerHTML=`
-                miercoles: ${ofer[i].miercoles}
-            `;
-        }
-        if(ofer[i].martes!=""){
-            document.getElementById("d1"+i).innerHTML=`
-                martes: ${ofer[i].martes}
-            `;
-        }
-        if(ofer[i].lunes!=""){
-            document.getElementById("d1"+i).innerHTML=`
-                lunes: ${ofer[i].lunes}
-            `;
-        }
         
     }
+    if(ofer[i].martes!=""){
+        document.getElementById("d2"+i).innerHTML+=`
+        <div class="ordenCuerpo" id="d1${i}"> <p><ion-icon name="time-outline"></ion-icon><b> martes: ${ofer[i].martes}</p> </div>
+        `;
+        
+    }
+    if(ofer[i].miercoles!=""){
+        document.getElementById("d2"+i).innerHTML+=`
+        <div class="ordenCuerpo" id="d1${i}"> <p><ion-icon name="time-outline"></ion-icon><b> Miercoles: ${ofer[i].miercoles}</p> </div>
+        `;
+        
+    }
+    if(ofer[i].jueves!=""){
+        document.getElementById("d2"+i).innerHTML+=`
+        <div class="ordenCuerpo" id="d1${i}"> <p><ion-icon name="time-outline"></ion-icon><b> Jueves: ${ofer[i].jueves}</p> </div>
+        `;
+        
+    }
+    if(ofer[i].viernes!=""){
+        document.getElementById("d2"+i).innerHTML+=`
+        <div class="ordenCuerpo" id="d1${i}"> <p><ion-icon name="time-outline"></ion-icon><b> Viernes: ${ofer[i].viernes}</p> </div>
+        `;
+        
+    }
+    if(ofer[i].sabado!=""){
+        document.getElementById("d2"+i).innerHTML+=`
+        <div class="ordenCuerpo" id="d1${i}"> <p><ion-icon name="time-outline"></ion-icon><b> Sabado: ${ofer[i].sabado}</p> </div>
+        `;
+        
+    }
+
+
+    postulados(ofer[i].ige,i);
+    //***************************--------====-------********************************
+   
+        
+    
     
   
    
@@ -242,7 +223,18 @@ function VerDetalleCargo(ige){
 
 //funcion para ver copiar el ige, el domicilio ect
 function copiar(elemento){
-    alert("elemento copiado: "+elemento+"   (Hacer!)")
+    
+    var content = document.getElementById(elemento);
+    
+    //content.select();
+    navigator.clipboard.writeText(content.innerText).then(
+        ()=>{
+            alert("copiado a portapapeles: "+content.innerText);
+        }
+    )
+
+    
+
 }
 
 

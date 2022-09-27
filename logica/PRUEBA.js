@@ -22,6 +22,7 @@ PeticionABC(tratamientoParametros("lomas de zamora","secundaria","ciencias natur
 
 document.getElementById("btnAplicarFiltros").disabled=false;
 
+
 //AplicarFIltro(selectDistrito,selectNivel,selectCargo);
 
 

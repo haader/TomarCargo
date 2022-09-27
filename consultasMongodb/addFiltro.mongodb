@@ -1,9 +1,0 @@
-
-use('abx')
-
-//, QUILMES (85), SAN VICENTE (99), PTE PERON (129)
-//db.filtros.insertOne({filtro3:{distrito:"lomas de zamora",nivel:"secundario",cargo:"ciencias naturales"}})
-
-db.filtros.insertOne({distritosFiltro:{distrito1:"almirante brown",distrito2:"lomas de zamora",distrito3:"quilmes",distrito4:"san vicente",distrito5:"presidente peron"}})
-
-db.filtros.find();

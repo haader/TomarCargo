@@ -1,2 +1,0 @@
-use('abx')
-db.filtros.find()

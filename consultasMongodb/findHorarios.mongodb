@@ -1,2 +1,0 @@
-use('abx');
-db.horarios.find();

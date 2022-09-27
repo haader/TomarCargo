@@ -1,4 +1,0 @@
-use("prueba");
-db.createCollection("hola")
-db.hola.insertOne({user:{name:"adrián",age:"29"}})
-db.hola.find;
