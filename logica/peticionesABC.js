@@ -76,13 +76,19 @@ function renderizarOfertas(texto){
         //creamos una variable que cuenta la cantidad de dias
         let numDay=0;
       
+
+//<ion-icon name="list-outline"></ion-icon>   <<=== icono de lista!!!!
+
         //RENDERIZAMOS EL CONTENIDO
+        console.log(i+" desde: "+ofer[i].supl_desde);
+        console.log(i+" hasta: "+ofer[i].supl_hasta);
+
         document.getElementById("ofertas").innerHTML+=`
     
         <div class="tarjeta">
         <div class="estado">
-            <p>PUBLICADA</p>
-            <span class="btn" onclick="VerDetalleCargo(${ofer[i].ige})"><ion-icon name="list-outline"></ion-icon></span>
+            <p>${ofer[i].descdistrito}</p>
+            <p>Publicada</p>
         </div>
         <div class="cargo">
             
@@ -103,7 +109,7 @@ function renderizarOfertas(texto){
         <div class="tarjetaBody">
     
         
-        <div class="ordenCuerpo"><p><ion-icon name="home-outline"></ion-icon><b> Domicilio: </b> <span id="domicilio${i}">${ofer[i].domiciliodesempeno}</span></p> <button class="btnAccionar" onclick='copiar("domicilio${i}")'><ion-icon name="copy-outline"></ion-icon> Copiar</button>  <button class="btnAccionar"><ion-icon name="navigate-circle-outline"></ion-icon>Ir Mapa</button></div>
+        <div class="ordenCuerpo"><p><ion-icon name="home-outline"></ion-icon><b> Domicilio: </b> <span id="domicilio${i}">${ofer[i].domiciliodesempeno}</span></p> <button class="btnAccionar" onclick='copiar("domicilio${i}")'><ion-icon name="copy-outline"></ion-icon> Copiar</button>  <button class="btnAccionar" role=link" onclick='irMapa("${ofer[i].domiciliodesempeno}","${ofer[i].descdistrito}")'><ion-icon name="navigate-circle-outline"></ion-icon>Ir Mapa</button></div>
         
         <div class="ordenCuerpo"><p><ion-icon name="briefcase-outline"></ion-icon><b> Curso/División: </b>${ofer[i].cursodivision} AÑOS</p></div>
         <div class="ordenCuerpo"><p><ion-icon name="briefcase-outline"></ion-icon><b> Turno: </b>${ofer[i].turno}</p></div>
@@ -133,7 +139,7 @@ function renderizarOfertas(texto){
                 <thead>
                     <tr>
                         <td>Nombre</td>
-                        <td>Listado de Origen</td>
+                        <td>Listado</td>
                         <td>Puntaje</td>
                         <td>Prioridad</td>
                     </tr>
@@ -190,7 +196,7 @@ function renderizarOfertas(texto){
     }
 
 
-    postulados(ofer[i].ige,i);
+    postulados(ofer[i].ige,i,ofer[i].iddetalle);
     //***************************--------====-------********************************
    
         
@@ -238,6 +244,17 @@ function copiar(elemento){
 }
 
 
+function irMapa(calle,distrito){
+    
+    let a=document.createElement('a');
+    a.setAttribute('href', 'https://www.google.com.ar/maps/place/'+calle+','+distrito+',+Provincia+de+Buenos+Aires+/');
+    a.setAttribute('target', "_blank");
+
+    a.click()    
+
+//https://www.google.com.ar/maps/place/Jorge+447,+B1846+Adrogu%C3%A9,+Provincia+de+Buenos+Aires/@-34.808411,-58.3963651,17z/data=!3m1!4b1!4m5!3m4!1s0x95bcd3429c7bb969:0x343dec5668c55349!8m2!3d-34.808411!4d-58.3941764
+}
+
 
 
 //let myfecha="2022-09-05T00:00:00Z";
@@ -246,6 +263,14 @@ function copiar(elemento){
 
 function transformarFechas(fecha){
 
+    if(fecha=="9999-12-31T00:00:00Z"){
+
+        return ["No definido"];
+
+    }else{
+
+
+ 
     //saca los elementos:
 let Year=new RegExp(/[0-9][0-9][0-9][0-9]/gi);
 let Month=new RegExp(/-[0-9][0-9]-/gi);
@@ -258,6 +283,9 @@ let meses=mes[0].replaceAll('-','');
 let year=fecha.match(Year);
 
 return [dias+"/"+meses+"/"+year];
+
+    }
+
 }
 
 function transformarFechaWithHora(fecha){

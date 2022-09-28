@@ -17,8 +17,10 @@ cargarFiltros();//que hace??
 
 PeticionABC(tratamientoParametros("lomas de zamora","secundaria","ciencias naturales (cnt)"));
 
-
+funcionBtnAplicarFiltros();
 //listaCargos("adultos y cens");//PETICION AL ABC, pushea la lista a objetoCargos
+AplicarDistrito(arrayDistrito[0].replaceAll(' ','_'));
+AplicarNiveles(arrayNivel[0].replaceAll(' ','_'));
 
 document.getElementById("btnAplicarFiltros").disabled=false;
 

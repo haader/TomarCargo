@@ -1,8 +1,10 @@
 
-function postulados(ige,id){
+function postulados(ige,id,detalle){
     let url="";
     const consulta=new XMLHttpRequest();
-    consulta.open('GET','https://servicios3.abc.gob.ar/valoracion.docente/api/apd.oferta.postulante/select?fq=idoferta%3A1219995&q=idoferta%3A'+ige+'&rows=2&json.nl=map&sort=estadopostulacion%20asc%2C%20orden%20asc%2C%20puntaje%20desc&wt=json&json.wrf=');
+    consulta.open('GET','https://servicios3.abc.gob.ar/valoracion.docente/api/apd.oferta.postulante/select?fq=idoferta%3A'+ige+'&fq=iddetalle%3A'+detalle+'&q=idoferta%3A'+ige+'%20OR%20iddetalle%3A'+detalle+'&rows=2&json.nl=map&sort=estadopostulacion%20asc%2C%20orden%20asc%2C%20puntaje%20desc&wt=json&json.wrf=');
+
+                        
 
     consulta.send();
 
@@ -24,14 +26,14 @@ function postulados(ige,id){
                         
                         <tr>
                             <td>${json.response.docs[0].nombres}</td>
-                            <td>${json.response.docs[0].puntaje}</td>
                             <td>${json.response.docs[0].listadoorigen}</td>
+                            <td>${json.response.docs[0].puntaje}</td>
                             <td>${json.response.docs[0].prioridad}</td>
                         </tr>
                         <tr>
                             <td>${json.response.docs[1].nombres}</td>
-                            <td>${json.response.docs[1].puntaje}</td>
                             <td>${json.response.docs[1].listadoorigen}</td>
+                            <td>${json.response.docs[1].puntaje}</td>
                             <td>${json.response.docs[1].prioridad}</td>
                         </tr>
                 
