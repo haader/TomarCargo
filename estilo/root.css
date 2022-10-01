@@ -1,6 +1,6 @@
 :root{
-    --color-primary:#b040a8;
-    --color-secondary: #38c8a8;
+    --color-primary:rgb(176, 64, 168);
+    --color-secondary: rgb(56, 200, 168);
     --color-lightgrey: #707070;
     --color-darkgrey: #474545;
     --color-institucional: #00b1c7;

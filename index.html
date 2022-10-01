@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="./estilo/Tarjetascargos.css">
     <link rel="stylesheet" href="./estilo/root.css">
     <link rel="stylesheet" href="./estilo/tablaPostulados.css">
+    <link rel="stylesheet" href="./estilo/tablaHorarios.css">
+    <link rel="stylesheet" href="./estilo/navegador.css">
     
 
 
@@ -20,113 +22,66 @@
 </head>
 <body id="cuerpo">
     <nav>
-        <h3>TomarCargo.com</h3>
+        <!-- <h3>TomarCargo.com</h3> -->
+        <h3>Undefined.com</h3>
     </nav>
-    <div class="form" >
-        <h3>Mis Horarios</h3>
-        <div class="columna">
-            <div class="row"><text>día:</text><select name="nameDía" id="Dia"></select></div>
-            <table>
-                <thead>
-                    <tr>
-                        <td>Mañana</td>
-                    </tr>
-                </thead>
-                <tbody>
-                        <tr id="checkM">
-                            
-                            
-                        </tr>
-                </tbody>
-
-                <thead>
-                    <tr>
-                        <td>Tarde</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr id="checkT">
-                            
-                    </tr>
-                </tbody>
-
-                <thead>
-                    <tr>
-                        <td>Noche</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr id="checkN">
-                            
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        
-        <div class="row">
-            <button onclick="btnAgregar()">Agregar</button>
-            <button>Eliminar</button>
-            <button onclick="btnLimpiar()">Limpiar</button>
-        </div>
-        
-    </div>
-    
+ 
     <section>
                 <h3>Mis horarios</h3>
             
             <div class="tabla">
-                <table>
+                <table class="horarios">
                     <thead>
                         <tr>
                             <td>Hora</td>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr class="turnoMN">
                             <td>1ra</td>
                         </tr>
-                        <tr>
+                        <tr class="turnoMN">
                             <td>2ra</td>
                         </tr>
-                        <tr>
+                        <tr class="turnoMN">
                             <td>3ra</td>
                         </tr>
-                        <tr>
+                        <tr class="turnoMN">
                             <td>4ra</td>
                         </tr>
             
-                        <tr>
+                        <tr class="turnoT">
                             <td>1ra</td>
                         </tr>
-                        <tr>
+                        <tr class="turnoT">
                             <td>2ra</td>
                         </tr>
-                        <tr>
+                        <tr class="turnoT">
                             <td>3ra</td>
                         </tr>
-                        <tr>
+                        <tr class="turnoT">
                             <td>4ra</td>
                         </tr>
             
-                        <tr>
+                        <tr class="turnoMN">
                             <td>1ra</td>
                         </tr>
-                        <tr>
+                        <tr class="turnoMN">
                             <td>2ra</td>
                         </tr>
-                        <tr>
+                        <tr class="turnoMN">
                             <td>3ra</td>
                         </tr>
-                        <tr>
+                        <tr class="turnoMN">
                             <td>4ra</td>
                         </tr>
             
                     </tbody>
                 </table>
-                <table>
+                <table class="tablaHorarios">
                 
                     <thead>
-                        <tr>
+                        <tr class="titleTable">
                             <td>LUNES</td>
                             <td>MARTES</td>
                             <td>MIERCOLES</td>
@@ -230,21 +185,39 @@
         </table> -->
     </div>
     <br>
-    <h2>Tarjetas</h2>
+    <hr class="divisor">
+    <nav class="column navResultado">
+        
+        <p>RESULTADO</p>
+        <ul class="row" id="navegador"><li><</li><li>1 de 10</li><li>></li></ul>
+    </nav>
+    
+    
     <br>
     <div id="ofertas" class="ofertas">
 
     
 
     </div>
+    <br>
+    <hr class="divisor">
+    <nav class="column navResultado">
+        
+        <p>RESULTADO</p>
+        <ul class="row" id="navegador"><li><</li><li>1 de 10</li><li>></li></ul>
+    </nav>
+    <br>
+    
 
+
+    <script src="./logica/calendario.js"></script>
     <script src="./logica/peticionesABC.js"></script>
     <script src="./logica/json.js"></script>
-    <script src="./logica/general.js"></script>
     <script src="./logica/filtro.js"></script>
     <script src="./logica/tablaFiltro.js"></script>
     <script src="./logica/listaCargos.js"></script>
     <script src="./logica/postulados.js"></script>
+    <script src="./logica/navegador.js"></script>
 
     
 

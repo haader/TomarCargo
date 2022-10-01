@@ -1,0 +1,47 @@
+.btnOff{
+    
+    border: 1px solid #bcbcbc;
+    border-radius: 5px;
+    background: var(--color-secondary);
+    color: white;
+    width: 100%;
+}
+
+.btnOn{
+    
+    border: 1px solid #bcbcbc;
+    border-radius: 5px;
+    background: var(--color-primary);
+    color: white;
+    width: 100%;
+}
+
+.horarios{
+    border-top: 20px solid var(--color-secondary);
+    border-top-left-radius: 10px;
+}
+
+
+.tablaHorarios
+td{
+    align-items: center;
+    width: 70px;
+    
+}
+.tablaHorarios{
+    border-top: 20px solid var(--color-secondary);
+    border-top-right-radius: 10px;
+}
+.titleTable
+td{
+    text-align: center;
+}
+
+.turnoMN{
+    background: rgb(203, 248, 203);
+    color: black;
+}
+.turnoT{
+    background: #81d3d0;
+    
+}

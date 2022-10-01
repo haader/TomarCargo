@@ -1,0 +1,30 @@
+.divisor{
+width: 100%;
+background: red;
+height: 2px;
+}
+
+.navResultado{
+    
+    text-align: center;
+    align-items: center;
+}
+.navResultado
+{
+    position: relative;
+    top:-27px;
+    background: white;
+    
+}
+.column
+li{
+    list-style: none;
+    margin: 0;
+  
+}
+.column
+ul{
+    padding: 0;
+    
+    justify-content: center;
+}
