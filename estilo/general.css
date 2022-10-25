@@ -9,6 +9,64 @@ body{
     
 }
 
+
+/* secciones desplegables */
+
+.btnShowFitros{
+    font-size: 3rem;
+    display: flex;
+    top: 0rem;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    
+    flex-direction: row;
+    border: 1px solid #bcbcbc;
+    border-radius: 10px;
+    background: var(--color-secondary);
+    color: white;
+    padding: 0.25rem;
+    gap: 0.5rem;
+    box-shadow: 2px 2px 5px 0px rgb(0 0 0 / 75%);
+
+    transition:all 0.5s;
+   
+}
+
+#filtrarContenedorFila{
+    
+    flex-direction: row;
+}
+/* https://stackoverflow.com/questions/3508605/how-can-i-transition-height-0-to-height-auto-using-css */
+
+
+
+.contenedorDesplegable{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: 1px solid rgb(188, 188, 188);
+    border-radius: 10px;
+    
+    padding: 1rem;
+    width: 90%;
+    align-items:center;
+    transition: max-height 2s ease;
+}
+
+#arrowHorario{
+    rotate: 180deg;
+    transition: all 1s;
+
+}
+#arrowFiltro{
+    rotate: 180deg;
+    transition: all 1s;
+}
+
+
+
+
 .form{
     display: flex;
     flex-direction: column;

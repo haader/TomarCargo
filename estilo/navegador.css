@@ -1,20 +1,26 @@
 .divisor{
 width: 100%;
-background: red;
-height: 2px;
+background: --var(--color-lightgrey);
+/* height: 2px; */
+border: solid 1px #707070;
 }
 
 .navResultado{
     
     text-align: center;
     align-items: center;
-}
-.navResultado
-{
     position: relative;
-    top:-27px;
+    top:-19px;
     background: white;
     
+}
+
+.navResultado
+p{
+    color:#464444;;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0;
 }
 .column
 li{
@@ -27,4 +33,29 @@ ul{
     padding: 0;
     
     justify-content: center;
+}
+
+/* nnavegador resultado */
+
+.btnNavResultado{
+    color:#464444;
+    font-size: x-large;
+}
+.select{
+    color: white;
+    font-size: large;
+    border-radius: 50%;
+    color:--var(--color-lightgrey);
+    background: #707070;
+}
+.selectList{
+    color: #707070;
+    font-size: large;
+    color:--var(--color-lightgrey);
+}
+
+.rowNavResultado{
+    display: flex;
+    gap: 0.5rem;
+    
 }

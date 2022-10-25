@@ -16,6 +16,101 @@ https://stackoverflow.com/questions/43262121/trying-to-use-fetch-and-pass-in-mod
     json.wrf=jQuery35109618661661334462_1661982684158&_=1661982684160
 
 */
+//transiciones de horarios
+//creamos la variable contadorHorario
+let contadorHorario=0;
+//funtion aparecer desaparecer
+document.getElementById("btnShowHorario").addEventListener("click",()=>{
+    //girar icono
+
+    
+    //mostramos el panel
+    if (contadorHorario==0) {
+        
+        ocultarPanelFiltro();
+        // cambiamos el color de fondo del btn desplegable a violeta (seleccionado)
+        document.getElementById("btnShowHorario").style.backgroundColor="rgb(176, 64, 168)";
+        //cambiamos el color del border del panel a violeta
+        document.getElementById("IDhorarioContenedor").style.borderColor="rgb(176, 64, 168)";
+        
+        document.getElementById("IDtabla").style.display="flex";
+        document.getElementById("arrowHorario").style.rotate='0deg';
+        document.getElementById("textoHorario").innerText=`Ocultar Horarios`;
+        contadorHorario=1;
+        
+       
+    }else{//display none
+        
+        ocultarPanelHorario();
+    }
+})
+
+function ocultarPanelHorario(){
+     // cambiamos el color de fondo del btn desplegable a verde (No seleccionado)
+     document.getElementById("btnShowHorario").style.backgroundColor="rgb(56, 200, 168)";
+     //cambiamos el color del border del panel a GRIS (no seleccionado)
+     document.getElementById("IDhorarioContenedor").style.borderColor="rgb(188, 188, 188)";
+        
+     document.getElementById("IDtabla").style.display="none";
+     document.getElementById("arrowHorario").style.rotate='180deg';
+     document.getElementById("arrowHorario").style.transition='rotate 1s';
+     document.getElementById("textoHorario").innerText="Ver Horarios";
+     
+     contadorHorario=0;
+}
+
+function ocultarPanelFiltro(){
+
+        // cambiamos el color de fondo del btn desplegable a verde (No seleccionado)
+        document.getElementById("btnShowFitros").style.backgroundColor="rgb(56, 200, 168)";
+        //cambiamos el color del border del panel a GRIS (no seleccionado)
+     document.getElementById("IDfiltrarContenedor").style.borderColor="rgb(188, 188, 188)";
+        
+
+
+        document.getElementById("filtrarContenedorFila").style.display="none";
+        document.getElementById("arrowFiltro").style.rotate='180deg';
+        document.getElementById("arrowFiltro").style.transition='rotate 1s';
+        document.getElementById("textoFitro").innerText="Ver Filtros";
+        
+        contadorFiltro=0;
+}
+
+
+//transiciones de filtros
+//creamos la variable contadorFiltro
+let contadorFiltro=0;
+//funtion aparecer desaparecer
+document.getElementById("btnShowFitros").addEventListener("click",()=>{
+    //girar icono
+
+    
+    //mostramos el panel
+    if (contadorFiltro==0) {
+                
+        ocultarPanelHorario();
+
+        // cambiamos el color de fondo del btn desplegable a violeta (Seleccionado)
+        document.getElementById("btnShowFitros").style.backgroundColor="rgb(176, 64, 168)";
+        //cambiamos el color del border del panel a violeta
+        document.getElementById("IDfiltrarContenedor").style.borderColor="rgb(176, 64, 168)";
+        
+
+        document.getElementById("filtrarContenedorFila").style.display="flex";
+        document.getElementById("arrowFiltro").style.rotate='0deg';
+        document.getElementById("textoFitro").innerText=`Ocultar Filtros`;
+        contadorFiltro=1;
+
+
+    }else{//display none
+        
+        ocultarPanelFiltro();
+    }
+})
+
+
+
+
 //variable coincidencias recorre los string de los arreglos
 let coincidecias=0;
 

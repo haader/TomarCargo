@@ -26,86 +26,89 @@
         <h3>Undefined.com</h3>
     </nav>
  
-    <section>
-                <h3>Mis horarios</h3>
-            
-            <div class="tabla">
-                <table class="horarios">
-                    <thead>
-                        <tr>
-                            <td>Hora</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="turnoMN">
-                            <td>1ra</td>
-                        </tr>
-                        <tr class="turnoMN">
-                            <td>2ra</td>
-                        </tr>
-                        <tr class="turnoMN">
-                            <td>3ra</td>
-                        </tr>
-                        <tr class="turnoMN">
-                            <td>4ra</td>
-                        </tr>
-            
-                        <tr class="turnoT">
-                            <td>1ra</td>
-                        </tr>
-                        <tr class="turnoT">
-                            <td>2ra</td>
-                        </tr>
-                        <tr class="turnoT">
-                            <td>3ra</td>
-                        </tr>
-                        <tr class="turnoT">
-                            <td>4ra</td>
-                        </tr>
-            
-                        <tr class="turnoMN">
-                            <td>1ra</td>
-                        </tr>
-                        <tr class="turnoMN">
-                            <td>2ra</td>
-                        </tr>
-                        <tr class="turnoMN">
-                            <td>3ra</td>
-                        </tr>
-                        <tr class="turnoMN">
-                            <td>4ra</td>
-                        </tr>
-            
-                    </tbody>
-                </table>
-                <table class="tablaHorarios">
-                
-                    <thead>
-                        <tr class="titleTable">
-                            <td>LUNES</td>
-                            <td>MARTES</td>
-                            <td>MIERCOLES</td>
-                            <td>JUEVES</td>
-                            <td>VIERNES</td>
-                            <td>SABADO</td>
-                        </tr>
-                    </thead>
-                    <tbody id="cuerpoCalendario">
-            
-                        
-            
-                    </tbody>
-                </table>
-            </div>
-    </section>
-
-    <br>
-    <h2>Aplicar Filtros </h2>
-    <br>
-
-    <div class="filtrarContenedor">
+    <div class="contenedorDesplegable" id="IDhorarioContenedor">
         
-        <div class="filtrarContenedorRow">
+        <span class="btnShowFitros" id="btnShowHorario"> <span id="textoHorario">Ver Horarios</span><ion-icon id="arrowHorario" name="chevron-up-circle-outline"></ion-icon></span>
+                    
+                <section id="IDtabla">
+                        
+                        <div class="tabla">
+                            <table class="horarios">
+                                <thead>
+                                    <tr>
+                                        <td>Hora</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="turnoMN">
+                                        <td>1ra</td>
+                                    </tr>
+                                    <tr class="turnoMN">
+                                        <td>2ra</td>
+                                    </tr>
+                                    <tr class="turnoMN">
+                                        <td>3ra</td>
+                                    </tr>
+                                    <tr class="turnoMN">
+                                        <td>4ra</td>
+                                    </tr>
+                        
+                                    <tr class="turnoT">
+                                        <td>1ra</td>
+                                    </tr>
+                                    <tr class="turnoT">
+                                        <td>2ra</td>
+                                    </tr>
+                                    <tr class="turnoT">
+                                        <td>3ra</td>
+                                    </tr>
+                                    <tr class="turnoT">
+                                        <td>4ra</td>
+                                    </tr>
+                        
+                                    <tr class="turnoMN">
+                                        <td>1ra</td>
+                                    </tr>
+                                    <tr class="turnoMN">
+                                        <td>2ra</td>
+                                    </tr>
+                                    <tr class="turnoMN">
+                                        <td>3ra</td>
+                                    </tr>
+                                    <tr class="turnoMN">
+                                        <td>4ra</td>
+                                    </tr>
+                        
+                                </tbody>
+                            </table>
+                            <table class="tablaHorarios">
+                            
+                                <thead>
+                                    <tr class="titleTable">
+                                        <td>LUNES</td>
+                                        <td>MARTES</td>
+                                        <td>MIERCOLES</td>
+                                        <td>JUEVES</td>
+                                        <td>VIERNES</td>
+                                        <td>SABADO</td>
+                                    </tr>
+                                </thead>
+                                <tbody id="cuerpoCalendario">
+                        
+                                    
+                        
+                                </tbody>
+                            </table>
+                        </div>
+                </section>
+    </div>
+    <br>
+
+    <div class="contenedorDesplegable" id="IDfiltrarContenedor">
+        
+        <span class="btnShowFitros" id="btnShowFitros"> <span id="textoFitro">Ver Filtros</span><ion-icon id="arrowFiltro" name="chevron-up-circle-outline"></ion-icon></span>
+        
+        <div class="filtrarContenedorRow" id="filtrarContenedorFila">
 
                 <div class="filtro">
                     <span class="circulo"><ion-icon name="map-outline"></ion-icon></span>
@@ -204,7 +207,7 @@
     <nav class="column navResultado">
         
         <p>RESULTADO</p>
-        <ul class="row" id="navegador"><li><</li><li>1 de 10</li><li>></li></ul>
+        <ul class="row rowNavResultado" id="navegador"><li><span class="btnNavResultado"><ion-icon name="chevron-back-circle-outline"></ion-icon></span></li><li class="select">1</li><li class="selectList"> de 10</li><li><span class="btnNavResultado"><ion-icon name="chevron-forward-circle-outline"></ion-icon></span></li></ul>
     </nav>
     <br>
     
