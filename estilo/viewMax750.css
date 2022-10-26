@@ -1,0 +1,12 @@
+@media screen and (max-width:750px){
+
+    .contenedorDesplegable{
+        width: 90%;
+    }
+    .btnShowDesplegable{
+        font-size: 2rem;
+    }
+    #filtrarContenedorFila{
+        flex-direction: column;
+    }
+}
