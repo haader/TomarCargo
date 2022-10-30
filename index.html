@@ -15,17 +15,55 @@
     <link rel="stylesheet" href="./estilo/tablaPostulados.css">
     <link rel="stylesheet" href="./estilo/tablaHorarios.css">
     <link rel="stylesheet" href="./estilo/navegador.css">
+    <link rel="stylesheet" href="./estilo/menu.css">
+    <link rel="stylesheet" href="./estilo/footer.css">
     <link rel="stylesheet" href="./estilo/viewMax750.css">
-    
 
 
 
 </head>
 <body id="cuerpo">
-    <nav>
+
+    <!-- MENU ESCRITORIO -->
+    <div class="espaciado">
+        
+    </div>
+
+    <nav class="menuDestock">
         <!-- <h3>TomarCargo.com</h3> -->
-        <h3>Undefined.com</h3>
+        <h3>TomarCargo.com</h3>
+
+            <ul class="listRow">
+                <li>Acerca del programador</li>
+                <li>¿Como funciona esta página?</li>
+                <li>Dejar Comentarios o Sugerencias</li>
+                <li>¿Como se guardan los datos?</li>
+            </ul>
+       
+ 
     </nav>
+    
+    <!-- MENU CELULAR -->
+    <nav class="menuCel">
+
+        <div class="titleCel">
+                <!-- FILA -->
+            <h3>TomarCargo.com</h3>
+           
+        </div>
+        
+        <ul class="listDesplegableCel" id="idListDesplegableCel">
+            <li>Acerca del programador</li>
+            <li>¿Como funciona esta página?</li>
+            <li>Dejar Comentarios o Sugerencias</li>
+            <li>¿Como se guardan los datos?</li>
+        </ul>
+
+        <span class="icon" ID="IDicon"><ion-icon name="menu-outline"></ion-icon></span>    
+
+    </nav>
+    
+    
  
     <div class="contenedorDesplegable" id="IDhorarioContenedor">
         
@@ -213,6 +251,17 @@
     <br>
     
 
+    <footer>
+        <span class="listmenu">
+            <ul>
+                <li>Acerca del programador</li>
+                <li>¿Como funciona esta página?</li>
+                <li>Dejar Comentarios o Sugerencias</li>
+                <li>¿Como se guardan los datos?</li>
+            </ul>
+        </span>
+    </footer>
+
 
     <script src="./logica/calendario.js"></script>
     <script src="./logica/peticionesABC.js"></script>
@@ -222,6 +271,7 @@
     <script src="./logica/listaCargos.js"></script>
     <script src="./logica/postulados.js"></script>
     <script src="./logica/navegador.js"></script>
+    <script src="./logica/menu.js"></script>
 
     
 

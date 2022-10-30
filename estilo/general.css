@@ -53,7 +53,6 @@ button{
     gap: 0.5rem;
     border: 1px solid rgb(188, 188, 188);
     border-radius: 10px;
-    
     padding: 1rem;
     align-items:center;
     transition: max-height 2s ease;

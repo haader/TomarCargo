@@ -9,4 +9,19 @@
     #filtrarContenedorFila{
         flex-direction: column;
     }
+
+    footer .listmenu ul{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menuDestock{
+        display: none;
+    }
+}
+
+@media screen and (width>=750px){
+    .menuCel{
+        display: none;
+    }
 }

@@ -1,0 +1,17 @@
+footer{
+    background: var(--color-secondary);
+    width: 100%;
+    display: flex;
+    
+    justify-content: center;
+    
+}
+
+footer .listmenu ul{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+footer .listmenu ul li{
+list-style: none;
+}
