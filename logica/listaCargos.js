@@ -1,3 +1,8 @@
+
+//creamos un objeto en LOCALSTORAGE si no existe
+
+
+
 //dependiendo de la "modalidad" se realiza la petición de la lista de cargos al servidor
 //creamos el objeto que contendra toda la info de los cargos separados por niveles
 let objetosCargos=[
