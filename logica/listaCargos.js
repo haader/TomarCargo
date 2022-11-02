@@ -5,6 +5,7 @@
 
 //dependiendo de la "modalidad" se realiza la petición de la lista de cargos al servidor
 //creamos el objeto que contendra toda la info de los cargos separados por niveles
+//objeto donde se guardan la lista de Cargos traidas del servidor a partir de el array de "niveles seleccionados"
 let objetosCargos=[
 {"adultos":[]},
 {"adultos_y_cens":[]},
@@ -18,22 +19,47 @@ let objetosCargos=[
 {"secundaria_adultos":[]},
 {"superior":[]},
 {"tecnico_profesional":[]}
-]
+];
 
-let objetoSeleccionCargos=[
-    {"adultos":[]},
-    {"adultos_y_cens":['area quimica cens - adultos (+5y)', 'fines quimica (wqq)', 'area fisica cens - adultos (+5x)']},
-    {"artistica":[]},
-    {"educacion_fisica":[]},
-    {"especial":[]},
-    {"inicial":[]},
-    {"primaria":[]},
-    {"psicologia":[]},
-    {"secundaria":['ciencias naturales (cnt)', 'fisico - quimica (fqa)', 'introducción a la química (iaq)', 'fundamentos de la química (fdq)', 'encargado medios apoyo tec-ped.quimica (eqq)', 'preceptor (/pr)', 'bibliotecario (/bi)']},
-    {"secundaria_adultos":[]},
-    {"superior":[]},
-    {"tecnico_profesional":[]}
-    ]
+if(localStorage.getItem('objetoSeleccionCargos')==null){
+    
+    localStorage.setItem('objetoSeleccionCargos',`[
+        {"adultos":[]},
+        {"adultos_y_cens":['area quimica cens - adultos (+5y)', 'fines quimica (wqq)', 'area fisica cens - adultos (+5x)']},
+        {"artistica":[]},
+        {"educacion_fisica":[]},
+        {"especial":[]},
+        {"inicial":[]},
+        {"primaria":[]},
+        {"psicologia":[]},
+        {"secundaria":['ciencias naturales (cnt)', 'fisico - quimica (fqa)', 'introducción a la química (iaq)', 'fundamentos de la química (fdq)', 'encargado medios apoyo tec-ped.quimica (eqq)', 'preceptor (/pr)', 'bibliotecario (/bi)']},
+        {"secundaria_adultos":[]},
+        {"superior":[]},
+        {"tecnico_profesional":[]}
+        ]`);
+        var objetoSeleccionCargos=localStorage.getItem('objetoSeleccionCargos');
+
+}else{
+    
+
+        var objetoSeleccionCargos=JSON.parse(localStorage.getItem('objetoSeleccionCargos'));
+        console.log(objetoSeleccionCargos)
+}
+
+// let objetoSeleccionCargos=[
+//     {"adultos":[]},
+//     {"adultos_y_cens":['area quimica cens - adultos (+5y)', 'fines quimica (wqq)', 'area fisica cens - adultos (+5x)']},
+//     {"artistica":[]},
+//     {"educacion_fisica":[]},
+//     {"especial":[]},
+//     {"inicial":[]},
+//     {"primaria":[]},
+//     {"psicologia":[]},
+//     {"secundaria":['ciencias naturales (cnt)', 'fisico - quimica (fqa)', 'introducción a la química (iaq)', 'fundamentos de la química (fdq)', 'encargado medios apoyo tec-ped.quimica (eqq)', 'preceptor (/pr)', 'bibliotecario (/bi)']},
+//     {"secundaria_adultos":[]},
+//     {"superior":[]},
+//     {"tecnico_profesional":[]}
+//     ]
     
 function listaCargos(modalidad){//trae la lista de cargos de la modalidad seleccionada
 
@@ -72,7 +98,7 @@ function listaCargos(modalidad){//trae la lista de cargos de la modalidad selecc
 }
 
 function pushToObjetosCargos(cargoAgregar,nivel){
-    //"objetoCargo" es el array que contiene la lista de CARGOS para elegir
+    //"objetoCargo" es el array que contiene la lista de CARGOS para elegir traida del servidor para que este acrualizado
     switch (nivel) {
        case "adultos":
             objetosCargos[0].adultos.push(cargoAgregar);
@@ -375,14 +401,15 @@ switch (nivel) {
     break;
  }
 
+ //guardamos el objeto en localStorage (objetoSeleccionCargos)
+localStorage.setItem('objetoSeleccionCargos',JSON.stringify(objetoSeleccionCargos));
+
+
  document.getElementById("filtro"+nivel).innerHTML=""; //LIMPIAMOS LA LISTA DE CARGOS PARA RENDERIZAR
  agregarCargo(nivel);//luego llamamos a renderizar el componente!
 
 
  exite();//salimos de la windowsBlack
-
-
- 
 
 
 
@@ -392,22 +419,22 @@ switch (nivel) {
 //antes de renderizar se debe limpiar el componente " "=>"_"
 //Renderiza los cargos en filtro 2 
 //=>>>>document.getElementById("filtro"+nivel).innerHTML="";//LIMPIAMOS LA LISTA DE CARGOS PARA RENDERIZAR
-function agregarCargo(nivel){
-    //esta  metido dentro de un for
+
+
+
+function agregarCargo(nivel){ //"RENDERIZA" los cargos segun el array de niveles
+    
+//esta  metido dentro de un for
 //esta opcion lo renderiza??? y la anterior lo guarda en un array?
-    
-    
-   
     switch (nivel) {
+
         case "adultos":
              objetoSeleccionCargos[0].adultos.forEach((element,index)=>{//revisar onclick='sacarFiltro("${nivel}",${index})'>X</button> "PENDIENTE"
                 document.getElementById("filtro"+nivel).innerHTML+=`
-                
                 <div class="rowFiltro">
                         <text>${element}</text>
                         <button onclick='sacarFiltro("${nivel}",${index})'>X</button>
-                    </div>
-    
+                </div>
                 `;
              })
          break;
@@ -660,6 +687,10 @@ switch (nivel) {
          })
     break;
  }
+
+
+ //guardamos el objeto en localStorage (objetoSeleccionCargos)
+localStorage.setItem('objetoSeleccionCargos',JSON.stringify(objetoSeleccionCargos));
 
 
 }

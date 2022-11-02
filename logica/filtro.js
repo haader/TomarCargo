@@ -121,8 +121,21 @@ let color="color1";//puede ser color="color2"
 
 //array distrito
 //let arrayDistrito=[];
-let arrayDistrito=["almirante brown","lomas de zamora", "quilmes", "san vicente", "presidente peron"]
-let arrayNivel=["adultos y cens","secundaria","secundaria adultos","tecnico profesional"];
+
+if(localStorage.getItem('arrayNivel')==null){
+    var arrayNivel=["adultos y cens","secundaria","secundaria adultos","tecnico profesional"];
+}else{
+    var arrayNivel=localStorage.getItem('arrayNivel');
+}
+
+
+if(localStorage.getItem('arrayDistrito')==null){
+
+    var arrayDistrito=["almirante brown","lomas de zamora", "quilmes", "san vicente", "presidente peron"]
+
+}else{
+    var arrayDistrito=localStorage.getItem('arrayDistrito');
+}
 // let arrayCargo=[
 //     "ciencias naturales cnt",
 //     "fisico - quimica fqa",
@@ -403,6 +416,7 @@ function variableGetInput(num){
 
 function Filtro(num){//funcion que es aplicada al btn "filtro" de la ventana emergente!!!
 
+    //segun el valor de num agrega un banner con el valor de seleccion
     switch (num) {
         case 0:
             //creamos un sub banner con el valor seleccionado
@@ -446,10 +460,6 @@ function Filtro(num){//funcion que es aplicada al btn "filtro" de la ventana eme
         default:
             break;
     }
-            
-            
-           
-    
 }
 
 function sacar(num,id){//elimina el filtro seleccionado
@@ -457,11 +467,12 @@ function sacar(num,id){//elimina el filtro seleccionado
     switch (num) {
         case 0:
 
+            //elimina el valor del array
             selectDistrito="";
             arrayDistrito.splice(id,1);//elimina el elemento del array
             document.getElementById("selectFiltro"+num).innerHTML="";
             
-            
+            //renderiza el array 
             arrayDistrito.forEach((element,index)=>{
               
                 document.getElementById("selectFiltro"+num).innerHTML+=`
@@ -473,7 +484,7 @@ function sacar(num,id){//elimina el filtro seleccionado
                     
             `;
             })
-
+            localStorage.setItem('arrayDistrito',JSON.stringify(arrayDistrito));
            
             break;
 
@@ -522,7 +533,10 @@ function sacar(num,id){//elimina el filtro seleccionado
 
 
             document.getElementById("btnAplicarFiltros").disabled=false;
+            
+            localStorage.setItem('arrayNivel',JSON.stringify(arrayNivel));
             break;
+
     
         case 2:
             selectCargo="";
@@ -542,6 +556,9 @@ function sacar(num,id){//elimina el filtro seleccionado
             })
 
             document.getElementById("btnAplicarFiltros").disabled=false;
+
+            localStorage.setItem('arrayCargo',JSON.stringify(arrayCargo));
+
             break;
             
     
