@@ -46,21 +46,6 @@ if(localStorage.getItem('objetoSeleccionCargos')==null){
         console.log(objetoSeleccionCargos)
 }
 
-// let objetoSeleccionCargos=[
-//     {"adultos":[]},
-//     {"adultos_y_cens":['area quimica cens - adultos (+5y)', 'fines quimica (wqq)', 'area fisica cens - adultos (+5x)']},
-//     {"artistica":[]},
-//     {"educacion_fisica":[]},
-//     {"especial":[]},
-//     {"inicial":[]},
-//     {"primaria":[]},
-//     {"psicologia":[]},
-//     {"secundaria":['ciencias naturales (cnt)', 'fisico - quimica (fqa)', 'introducción a la química (iaq)', 'fundamentos de la química (fdq)', 'encargado medios apoyo tec-ped.quimica (eqq)', 'preceptor (/pr)', 'bibliotecario (/bi)']},
-//     {"secundaria_adultos":[]},
-//     {"superior":[]},
-//     {"tecnico_profesional":[]}
-//     ]
-    
 function listaCargos(modalidad){//trae la lista de cargos de la modalidad seleccionada
 
     //tratamiento de la modalidad
