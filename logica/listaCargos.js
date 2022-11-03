@@ -23,27 +23,33 @@ let objetosCargos=[
 
 if(localStorage.getItem('objetoSeleccionCargos')==null){
     
-    localStorage.setItem('objetoSeleccionCargos',`[
+    localStorage.setItem('objetoSeleccionCargos',[
         {"adultos":[]},
-        {"adultos_y_cens":[area quimica cens - adultos (+5y), fines quimica (wqq), area fisica cens - adultos (+5x)]},
+        {"adultos_y_cens":['area quimica cens - adultos (+5y)','fines quimica (wqq)','area fisica cens - adultos (+5x)']},
         {"artistica":[]},
         {"educacion_fisica":[]},
         {"especial":[]},
         {"inicial":[]},
         {"primaria":[]},
         {"psicologia":[]},
-        {"secundaria":[ciencias naturales (cnt), fisico - quimica (fqa), introducción a la química (iaq), fundamentos de la química (fdq), encargado medios apoyo tec-ped.quimica (eqq), preceptor (/pr), bibliotecario (/bi)]},
+        {"secundaria":['ciencias naturales (cnt)','fisico - quimica (fqa)','introducción a la química (iaq)','fundamentos de la química (fdq)','encargado medios apoyo tec-ped.quimica (eqq)','preceptor (/pr)','bibliotecario (/bi)']},
         {"secundaria_adultos":[]},
         {"superior":[]},
         {"tecnico_profesional":[]}
-    ]`);
+    ]);
         var objetoSeleccionCargos=localStorage.getItem('objetoSeleccionCargos');
     console.log("//***************");
-    console.log("hay datos guardados")
+    console.log(" <NO> hay datos guardados");
+    console.log(" <Se> crearon los datos!");
     console.log(JSON.parse(localStorage.getItem('objetoSeleccionCargos')));
     console.log("//***************");
 }else{
     
+    console.log("**///////////////");
+    console.log("hay datos guardados");
+    console.log(" <Se> CARGARON los datos!");
+    console.log(JSON.parse(localStorage.getItem('objetoSeleccionCargos')));
+    console.log("**///////////////");
 
         var objetoSeleccionCargos=JSON.parse(localStorage.getItem('objetoSeleccionCargos'));
         console.log(objetoSeleccionCargos)
