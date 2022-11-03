@@ -23,7 +23,7 @@ let objetosCargos=[
 
 if(localStorage.getItem('objetoSeleccionCargos')==null){
     
-    localStorage.setItem('objetoSeleccionCargos',`[
+    localStorage.setItem('objetoSeleccionCargos',`
         {"adultos":[]},
         {"adultos_y_cens":[area quimica cens - adultos (+5y), fines quimica (wqq), area fisica cens - adultos (+5x)]},
         {"artistica":[]},
@@ -36,7 +36,7 @@ if(localStorage.getItem('objetoSeleccionCargos')==null){
         {"secundaria_adultos":[]},
         {"superior":[]},
         {"tecnico_profesional":[]}
-        ]`);
+        `);
         var objetoSeleccionCargos=localStorage.getItem('objetoSeleccionCargos');
 
 }else{
