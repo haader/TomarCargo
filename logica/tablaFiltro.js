@@ -68,7 +68,7 @@ function AplicarDistrito(dis){
        
        switch (NivelSelect) {
         case "adultos":
-             objetoSeleccionCargos[0].adultos.forEach(elementCargo=>{
+             objetoSeleccionCargos.adultos.forEach(elementCargo=>{
     
             auxiliarRenderizarTable(dis.replaceAll('_',' '),"adultos",elementCargo);
     
@@ -78,7 +78,7 @@ function AplicarDistrito(dis){
          break;
     
         case "adultos_y_cens":
-         objetoSeleccionCargos[1].adultos_y_cens.forEach(elementCargo=>{
+         objetoSeleccionCargos.adultos_y_cens.forEach(elementCargo=>{
     
             auxiliarRenderizarTable(dis.replaceAll('_',' '),"adultos y cens",elementCargo);
     
@@ -87,7 +87,7 @@ function AplicarDistrito(dis){
          break;
     
         case "artistica":
-         objetoSeleccionCargos[2].artistica.forEach(elementCargo=>{
+         objetoSeleccionCargos.artistica.forEach(elementCargo=>{
     
             auxiliarRenderizarTable(dis.replaceAll('_',' '),"artistica",elementCargo);
     
@@ -96,7 +96,7 @@ function AplicarDistrito(dis){
          break;
     
         case "educacion_fisica":
-         objetoSeleccionCargos[3].educacion_fisica.forEach(elementCargo=>{
+         objetoSeleccionCargos.educacion_fisica.forEach(elementCargo=>{
     
             auxiliarRenderizarTable(dis.replaceAll('_',' '),"educacion fisica",elementCargo);
     
@@ -105,7 +105,7 @@ function AplicarDistrito(dis){
          break;
     
         case "especial":
-         objetoSeleccionCargos[4].especial.forEach(elementCargo=>{
+         objetoSeleccionCargos.especial.forEach(elementCargo=>{
     
             auxiliarRenderizarTable(dis.replaceAll('_',' '),"especial",elementCargo);
     
@@ -114,7 +114,7 @@ function AplicarDistrito(dis){
          break;
     
         case "inicial":
-         objetoSeleccionCargos[5].inicial.forEach(elementCargo=>{
+         objetoSeleccionCargos.inicial.forEach(elementCargo=>{
     
             auxiliarRenderizarTable(dis.replaceAll('_',' '),"inicial",elementCargo);
     
@@ -123,7 +123,7 @@ function AplicarDistrito(dis){
          break;
     
         case "primaria":
-         objetoSeleccionCargos[6].primaria.forEach(elementCargo=>{
+         objetoSeleccionCargos.primaria.forEach(elementCargo=>{
     
             auxiliarRenderizarTable(dis.replaceAll('_',' '),"primaria",elementCargo);
     
@@ -132,7 +132,7 @@ function AplicarDistrito(dis){
          break;
     
         case "psicologia":
-         objetoSeleccionCargos[7].psicologia.forEach(elementCargo=>{
+         objetoSeleccionCargos.psicologia.forEach(elementCargo=>{
     
             auxiliarRenderizarTable(dis.replaceAll('_',' '),"psicologia",elementCargo);
     
@@ -141,7 +141,7 @@ function AplicarDistrito(dis){
          break;
     
         case "secundaria":
-         objetoSeleccionCargos[8].secundaria.forEach(elementCargo=>{
+         objetoSeleccionCargos.secundaria.forEach(elementCargo=>{
     
             auxiliarRenderizarTable(dis.replaceAll('_',' '),"secundaria",elementCargo);
     
@@ -150,7 +150,7 @@ function AplicarDistrito(dis){
          break;
     
         case "secundaria_adultos":
-         objetoSeleccionCargos[9].secundaria_adultos.forEach(elementCargo=>{
+         objetoSeleccionCargos.secundaria_adultos.forEach(elementCargo=>{
     
             auxiliarRenderizarTable(dis.replaceAll('_',' '),"secundaria adultos",elementCargo);
     
@@ -159,7 +159,7 @@ function AplicarDistrito(dis){
          break;
     
         case "superior":
-         objetoSeleccionCargos[10].superior.forEach(elementCargo=>{
+         objetoSeleccionCargos.superior.forEach(elementCargo=>{
     
             auxiliarRenderizarTable(dis.replaceAll('_',' '),"superior",elementCargo);
     
@@ -168,7 +168,7 @@ function AplicarDistrito(dis){
          break;
     
         case "tecnico_profesional":
-         objetoSeleccionCargos[11].tecnico_profesional.forEach(elementCargo=>{
+         objetoSeleccionCargos.tecnico_profesional.forEach(elementCargo=>{
     
             auxiliarRenderizarTable(dis.replaceAll('_',' '),"tecnico profesional",elementCargo);
     
