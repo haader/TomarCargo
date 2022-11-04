@@ -20,7 +20,7 @@ https://stackoverflow.com/questions/43262121/trying-to-use-fetch-and-pass-in-mod
 //creamos la variable contadorHorario
 let contadorHorario=0;
 //funtion aparecer desaparecer
-document.getElementById("btnShowHorario").addEventListener("click",()=>{
+function actionShowHorario(){
     //girar icono
 
     
@@ -43,7 +43,7 @@ document.getElementById("btnShowHorario").addEventListener("click",()=>{
         
         ocultarPanelHorario();
     }
-})
+}
 
 function ocultarPanelHorario(){
      // cambiamos el color de fondo del btn desplegable a verde (No seleccionado)
@@ -81,7 +81,7 @@ function ocultarPanelFiltro(){
 //creamos la variable contadorFiltro
 let contadorFiltro=0;
 //funtion aparecer desaparecer
-document.getElementById("btnShowFitros").addEventListener("click",()=>{
+function actionShowFiltros(){
     //girar icono
 
     
@@ -106,7 +106,7 @@ document.getElementById("btnShowFitros").addEventListener("click",()=>{
         
         ocultarPanelFiltro();
     }
-})
+}
 
 
 
