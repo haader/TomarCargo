@@ -122,19 +122,21 @@ let color="color1";//puede ser color="color2"
 //array distrito
 //let arrayDistrito=[];
 
-if(localStorage.getItem('arrayNivel')==null){
+if(!localStorage.getItem("arrayNivel")){
     var arrayNivel=["adultos y cens","secundaria","secundaria adultos","tecnico profesional"];
+    localStorage.setItem("arrayNivel",JSON.stringify(arrayNivel));
 }else{
-    var arrayNivel=localStorage.getItem('arrayNivel');
+    var arrayNivel=JSON.parse(localStorage.getItem("arrayNivel"));
 }
 
 
-if(localStorage.getItem('arrayDistrito')==null){
+if(!localStorage.getItem("arrayDistrito")){
 
-    var arrayDistrito=["almirante brown","lomas de zamora", "quilmes", "san vicente", "presidente peron"]
+    var arrayDistrito=["almirante brown","lomas de zamora", "quilmes","san vicente","presidente peron"];
+    localStorage.setItem("arrayDistrito",JSON.stringify(arrayDistrito));
 
 }else{
-    var arrayDistrito=localStorage.getItem('arrayDistrito');
+    var arrayDistrito=JSON.parse(localStorage.getItem("arrayDistrito"));
 }
 // let arrayCargo=[
 //     "ciencias naturales cnt",
