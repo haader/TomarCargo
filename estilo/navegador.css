@@ -12,6 +12,7 @@ border: solid 1px #707070;
     position: relative;
     top:-19px;
     background: white;
+    z-index: 0;
     
 }
 

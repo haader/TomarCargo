@@ -15,6 +15,10 @@
     width: 100%;
     gap: 4rem;
     box-shadow:2px 2px 5px black;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
 
 }
 
@@ -26,14 +30,13 @@
 }
 
 /* CELULAR */
-nav{
+
+
+.menuCel{
     width: 100%;
     position: fixed;
     top: 0;
-    z-index: 0;
-}
-
-.menuCel{
+    z-index: 1;
     background-color: var(--color-secondary);
     width: 100%;
     display: flex;
