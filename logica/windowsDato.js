@@ -93,7 +93,7 @@ function deleteDBfiltro(){
 
 function deleteDBdistrito(){
     localStorage.removeItem("arrayDistrito");
-    estadoFiltroDB="Los datos fueron borrados";
+    estadoDistritoDB="Los datos fueron borrados";
     document.getElementById("IDDistritoDB").innerHTML=`
     
                     <text><strong>Distrito:</strong></text>
@@ -104,7 +104,7 @@ function deleteDBdistrito(){
 
 function deleteDBnivel(){
     localStorage.removeItem("arrayNivel");
-    estadoFiltroDB="Los datos fueron borrados";
+    estadoNivelDB="Los datos fueron borrados";
     document.getElementById("IDNivelDB").innerHTML=`
     
                     <text><strong>Nivel:</strong></text>
