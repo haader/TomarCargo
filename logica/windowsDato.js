@@ -48,13 +48,13 @@ function irConfDato(){
             </div>
 
             <div class="divFiltro" id="IDFiltroDB">
-            <text><strong>Filtros:</strong></text>
+            <text><strong>Distritos:</strong></text>
                 <p>${estadoDistritoDB}</p>
                 <button onclick="deleteDBdistrito()">Borrar Datos</button>     
             </div>
 
             <div class="divFiltro" id="IDFiltroDB">
-            <text><strong>Filtros:</strong></text>
+            <text><strong>Niveles:</strong></text>
                 <p>${estadoNivelDB}</p>
                 <button  onclick="deleteDBnivel()">Borrar Datos</button>    
             </div>
@@ -96,7 +96,7 @@ function deleteDBdistrito(){
     estadoFiltroDB="Los datos fueron borrados";
     document.getElementById("IDDistritoDB").innerHTML=`
     
-                    <text><strong>Filtros:</strong></text>
+                    <text><strong>Distrito:</strong></text>
                     <p>${estadoDistritoDB}</p>
                     <button onclick="deleteDBdistrito()">Borrar Datos</button>   
                     `
@@ -107,7 +107,7 @@ function deleteDBnivel(){
     estadoFiltroDB="Los datos fueron borrados";
     document.getElementById("IDNivelDB").innerHTML=`
     
-                    <text><strong>Filtros:</strong></text>
+                    <text><strong>Nivel:</strong></text>
                     <p>${estadoNivelDB}</p>
                     <button  onclick="deleteDBnivel()">Borrar Datos</button>   
                     `
